@@ -7,15 +7,15 @@ This is my frist exciting project done in the Sofware Engineering Immersive boot
 ## :computer: [Click here](https://anuachu.github.io/Tic-Tac-toe/) to see my live project!
 
 :pencil: Planning and Problem Solving
-   
- 
- <li>Tic Tac Toe game contain 2 players</li>
+------------------------------------------------------------------------------
+  
+ <li>Tic Tac Toe game request for 2 players</li>
  <li>Player1 will be X</li>
  <li>Player2 will be O</li>
- <li>After Each Player turn, Turn is being passed to other player</li>
- <li>Game as 8 scenerio for winning and 1 scenerio is draw</li>
- <li>After each win of players the click is been disabled</li>
- <li>After each game click on reset button to reset the game</li>
+ <li>After Each Player's turn, Turn is being passed to other player</li>
+ <li>Game has 8 scenerio for winning and 1 scenerio for a draw</li>
+ <li>When a player wins the board gets deactivated and the winner is notified</li>
+ <li>A restart option to restatrt a new game</li>
  
 :rocket: Cool tech
  -----------------------------------------------------------------------
@@ -24,9 +24,26 @@ This is my frist exciting project done in the Sofware Engineering Immersive boot
  <li>JavaSCRIPT</li>
  
  
- :fearful#: Bugs to fix :poop:
+ :fearful: Bugs to fix :poop:
+ ----------------------------------------------------------------------
  
- <ul>
- <li>
+ <li>Capturing the players real name</li>
+ <li>Letting player Choose as player 1 or player 2</li> 
+ <li>Displays Each Players turn</li>
+ <li>Music may play</li>
+ 
+ :sweat: Lessons learnt
+ --------------------------------------------------------------------------
+ 
+ Was better if I could use time Efficiently in stying part and giving importance to others features
+ 
+ :writing_hand: Future Features
+ ------------------------------------------------------------------------------
+ Cool Things I would add if I can keep working on this
+ 
+ 
+ 
+
+
  
 
