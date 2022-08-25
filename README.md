@@ -19,6 +19,12 @@ This is my frist exciting project done in the Sofware Engineering Immersive boot
  
 :rocket: Cool tech
  -----------------------------------------------------------------------
+ <li>HTML</li>
+ <li>CSS</li>
+ <li>JavaSCRIPT</li>
+ 
+ 
+ :fearful: Bugs to fix :poop:
  
  <ul>
  <li>
