@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .horizontal{
+            border-left:1px solid black;
+        }
+        .vertical{
+            border-left: 1px solid black;
+        } */
+        table{
+
+    width: 50%;
+    min-width: 2rem;
+     border: solid black;
+     margin: 0 auto;
+     margin-top: 249px ;
+
+  
+}
+th, td{
+  white-space: wrap;
+  overflow: hidden;
+  height: 4rem;
+}
+
+td,th  {
+  white-space: wrap;
+  text-overflow: ellipsis;
+  border: solid black;
+  padding: 0.1rem;
+  text-align: center;
+  max-width: 3rem;
+  min-width:0rem;
+
+  cursor: pointer;
+}
+
+
+img  {
+  width: 100%;
+  height: 100%;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+    <!-- <div class = "horizontal">
+        <div class = "vertical">
+
+        </div>
+        
+    </div> -->
+    <table class = table>
+          <tr class = "first1Box">
+           <td class = "firstBox"></td>
+          <td class = "secondBox"></td>
+          <td class = "thirdBox"></td> 
+        </tr>
+        <tr class = "second2Box">
+          <td class = "secondFirstBox"></td>
+          <td class = "secondSecondBox" ></td>
+          <td class = "secondThirdBox"></td> 
+        </tr>
+        <tr class = "third3Box">
+          <td class = "thirdFirstBox"></td>
+          <td class = "secondThirdBox"></td>
+          <td class = "thirdThirdBox"></td> 
+        </tr>
+      </table>
+    
+      <button class = "reset">Reset</button>
+    
+    <script>
+
+var players =["X","O"]
+ 
+var playersTurn = 0;
+var tableBox = document.querySelector(".table")
+
+
+function buttonDisabled() {
+    for(var i = 0; i <tableBox.length;i++){
+    tableBox[i].removeEventListener('click', function(){})
+    console.log("anu");
+    }
+}
+
+ 
+
+tableBox.addEventListener('click', function(event){
+
+
+
+
+    let box = event.target
+    
+    event.preventDefault()
+     console.log(box.tagName);
+    if(box.tagName === "TD"){
+
+       console.log("meow");
+       console.log(box.textContent)
+        // for(var i = 0; i < players.length;i++){
+            
+           
+        // if(box.textContent === players[i] ){
+            if(box.textContent === ""  && playersTurn === 0){   
+            box.textContent = players[0];
+
+        //   player1.player1Token = "X";
+            console.log("player 1 turn");
+            playersTurn++;
+        } else {
+             box.textContent = players[1];
+            console.log("Player 2 turn");
+            playersTurn = 0;
+           
+        }
+     
+
+ function compareChoice(){
+
+   console.log("compareChoice");
+    // For 1st td horizontal win
+    for(var i = 0; i < players.length;i++){
+   console.log("a")
+     if(tableBox.children[0].children[0].children[0].textContent === players[i]&&
+    tableBox.children[0].children[0].children[1].textContent === players[i] &&   
+    tableBox.children[0].children[0].children[2].textContent === players[i]){
+        
+    tableBox.children[0].children[0].children[0].style.backgroundColor = "green";
+
+    tableBox.children[0].children[0].children[1].style.backgroundColor = "green";
+
+    tableBox.children[0].children[0].children[2].style.backgroundColor = "green";
+
+    if(tableBox.children[0].children[0].children[0].textContent === players[0]&&
+    tableBox.children[0].children[0].children[1].textContent === players[0]&&   
+    tableBox.children[0].children[0].children[2].textContent === players[0] ){
+        displayResult("Player 1 Won");
+         return;
+    } else {
+        displayResult("player 2 Won");
+        return;
+        } 
+    } 
+   
+  }  
+ 
+    
+
+   // For 2nd td horizontal tag
+   for(var i = 0; i < players.length;i++){
+    if(tableBox.children[0].children[1].children[0].textContent=== players[i] &&
+    tableBox.children[0].children[1].children[1].textContent === players[i] &&  
+    tableBox.children[0].children[1].children[2].textContent === players[i] ){
+    console.log("anusha");
+        tableBox.children[0].children[1].children[0].style.backgroundColor = "green";
+
+        tableBox.children[0].children[1].children[1].style.backgroundColor = "green";
+
+        tableBox.children[0].children[1].children[2].style.backgroundColor = "green";
+
+    if(tableBox.children[0].children[1].children[0].textContent === players[0]&&
+    tableBox.children[0].children[1].children[1].textContent === players[0]&&   
+    tableBox.children[0].children[1].children[2].textContent === players[0] ){
+        displayResult('Player 1 Won');
+        return;
+    } else {
+        displayResult("player 2 Won");
+        return;
+    }
+    }}
+     
+    //For 3rd td horizontal tag
+    for(var i = 0; i < players.length;i++){
+    if(tableBox.children[0].children[2].children[0].textContent === players[i] &&
+    tableBox.children[0].children[2].children[1].textContent === players[i] &&  
+    tableBox.children[0].children[2].children[2].textContent === players[i] ){
+    console.log("anusha");
+         tableBox.children[0].children[2].children[0].style.backgroundColor = "green";
+
+        tableBox.children[0].children[2].children[1].style.backgroundColor = "green";
+
+         tableBox.children[0].children[2].children[2].style.backgroundColor = "green";
+
+    if(tableBox.children[0].children[2].children[0].textContent === players[0]&&
+    tableBox.children[0].children[2].children[1].textContent === players[0]&&   
+    tableBox.children[0].children[2].children[2].textContent === players[0] ){
+        displayResult('Player 1 Won');
+        
+    } else {
+        displayResult("player 2 Won");
+        return;
+    }
+    }}
+
+    //For 1st td tag vertical
+    for(var i = 0; i < players.length;i++){
+    if(tableBox.children[0].children[0].children[0].textContent ===  players[i] &&
+    tableBox.children[0].children[1].children[0].textContent === players[i] && tableBox.children[0].children[2].children[0].textContent === players[i] 
+     ){
+        tableBox.children[0].children[0].children[0].style.backgroundColor = "yellow";
+
+        tableBox.children[0].children[1].children[0].style.backgroundColor = "yellow";
+
+        tableBox.children[0].children[2].children[0].style.backgroundColor = "yellow";
+    
+    if(tableBox.children[0].children[0].children[0].textContent === players[0]&&
+    tableBox.children[0].children[1].children[0].textContent === players[0]&&   
+    tableBox.children[0].children[2].children[0].textContent === players[0] ){
+        displayResult('Player 1 Won');
+         return;
+    } else {
+        displayResult("player 2 Won");
+    }}
+    }
+
+    // //For 2nd td tag vertical
+    for(var i = 0; i < players.length;i++){
+    if( tableBox.children[0].children[0].children[1].textContent === players[i] &&
+    tableBox.children[0].children[1].children[1].textContent === players[i]  && tableBox.children[0].children[2].children[1].textContent === players[i]
+     ){
+        tableBox.children[0].children[0].children[1].style.backgroundColor = "yellow";
+
+        tableBox.children[0].children[1].children[1].style.backgroundColor = "yellow";
+
+        tableBox.children[0].children[2].children[1].style.backgroundColor = "yellow";
+    if(tableBox.children[0].children[0].children[1].textContent === players[0]&&
+    tableBox.children[0].children[1].children[1].textContent === players[0]&&   
+    tableBox.children[0].children[2].children[1].textContent === players[0] ){
+        displayResult('Player 1 Won');
+         return;
+    } else {
+        displayResult("player 2 Won");
+    }
+    }}
+
+    //For 3rd td tag vertical
+    for(var i = 0; i < players.length;i++){  
+    if( tableBox.children[0].children[0].children[2].textContent === players[i]  &&
+    tableBox.children[0].children[1].children[2].textContent === players[i]  && tableBox.children[0].children[2].children[2].textContent === players[i])
+    {
+        tableBox.children[0].children[0].children[2].style.backgroundColor = "yellow";
+
+        tableBox.children[0].children[1].children[2].style.backgroundColor = "yellow";
+
+        tableBox.children[0].children[2].children[2].style.backgroundColor = "yellow";
+    if(tableBox.children[0].children[0].children[2].textContent === players[0]&&
+    tableBox.children[0].children[1].children[2].textContent === players[0]&&   
+    tableBox.children[0].children[2].children[2].textContent === players[0] ){
+        displayResult('Player 1 Won');
+    } else {
+        displayResult("player 2 Won");
+        return;
+    } 
+    }
+}
+    // //For 1st Cross
+    for(var i = 0; i < players.length;i++){ 
+    if(tableBox.children[0].children[0].children[0].textContent === players[i] && tableBox.children[0].children[1].children[1].textContent === players[i] && tableBox.children[0].children[2].children[2].textContent === players[i])
+    {
+        tableBox.children[0].children[0].children[0].style.backgroundColor = "purple";
+
+       tableBox.children[0].children[1].children[1].style.backgroundColor = "purple";
+
+       tableBox.children[0].children[2].children[2].style.backgroundColor = "purple";
+if(tableBox.children[0].children[0].children[0].textContent === players[0]&&
+tableBox.children[0].children[1].children[1].textContent === players[0]&&   
+tableBox.children[0].children[2].children[2].textContent === players[0] ){
+        displayResult('Player 1 Won');
+     
+    } else {
+       displayResult("player 2 Won");
+    }
+    }}
+
+    // //For 2nd Cross
+     
+    for(var i = 0; i < players.length;i++){ 
+    if(tableBox.children[0].children[0].children[2].textContent === players[i] &&  tableBox.children[0].children[1].children[1].textContent === players[i] && tableBox.children[0].children[2].children[0].textContent === players[i])
+    {
+        tableBox.children[0].children[0].children[2].style.backgroundColor = "orange";
+
+       tableBox.children[0].children[1].children[1].style.backgroundColor = "orange";
+
+       tableBox.children[0].children[2].children[0].style.backgroundColor = "orange";
+       if(tableBox.children[0].children[0].children[2].textContent === players[0]&&
+    tableBox.children[0].children[1].children[1].textContent === players[0]&&   
+    tableBox.children[0].children[2].children[0].textContent === players[0] ){
+        displayResult('Player 1 Won');
+        
+    } else {
+        displayResult("player 2 Won");
+    }
+    }
+}
+
+    //For draw
+}  
+compareChoice();
+console.log("a");
+}})
+
+
+function displayResult(result) {
+  textResult = document.createElement("h2");
+  textResult.innerText = result;
+  document.body.appendChild(textResult);
+}
+
+
+</script>
+</body>
+</html>
