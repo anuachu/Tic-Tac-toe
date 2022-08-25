@@ -42,7 +42,7 @@
       </table>
       <div class = "button">
      <button class = "reset">Reset</button>
-     <div class = "scores">
+        <div class = "scores">
         <div class="player1Score">
      <p class = "player1Score">Player 1 Score</p>
     
@@ -62,13 +62,8 @@
 var players =["X","O"]
 
 var playersTurn = 0;
-var tableBox = document.querySelector("score1")
+var tableBox = document.querySelector(".table")
 var count = 0;
-var balance = document.querySelector('.balance');
-    // balance = parseFloat(balance.textContent.toFixed(2));
-    console.log('an');
-
-       balance.textContent= Number(input.value) + Number(balance.textContent);
 
 
 function reset(){
@@ -82,13 +77,15 @@ function reset(){
 }
 
  reset();
+console.log("meow");
+
 
 tableBox.addEventListener('click', clickHandler)
 
 
 
 function clickHandler(event){
-
+    
      let box = event.target
      if(box.textContent !== "")return;
 
