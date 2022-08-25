@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;700&family=Roboto&display=swap');
+       table {
+  border-collapse: collapse;
+}
+table td {
+  border: 1px solid #8b8b8b; 
+}
+table tr:first-child td {
+  border-top: 0;
+}
+table tr td:first-child {
+  border-left: 0;
+}
+table tr:last-child td {
+  border-bottom: 0;
+}
+table tr td:last-child {
+  border-right: 0;
+}
+table{
+    max-width: 24rem;
+    min-width: 24rem;
+
+     margin: 0 auto;
+     margin-top: 34px ;
+   height: 100%;
+}
+header{
+    text-align: center;
+}
+h1,h2{
+    animation :colorFade 1s infinite;
+    color:rgb(128, 128, 128);
+    font-family: "Dancing Script";
+    font-size:64px; 
+    color:white;
+}
+
+
+th, td{
+  white-space: wrap;
+  overflow: hidden;
+  height: 4rem;
+}
+
+td,th  {
+  white-space: wrap;
+  text-overflow: ellipsis;
+  border: solid black;
+  padding: 0.1rem;
+  text-align: center;
+  max-width: 1rem;
+  min-width:1rem;
+  color:white;
+  cursor: pointer;
+}
+body { 
+	max-width: 1080px; 
+	margin: 0 auto !important; 
+	float: none !important; 
+    background-image:url("https://rare-gallery.com/resol/1920x1080/4584070-black-gray-leather-texture-dark-simple.jpg");
+    background-repeat: no-repeat;
+    background-size:100% 200% ;
+}
+.button{
+    margin: 0 auto;
+    text-align: center;
+    margin-top:48px;
+    
+}
+.section{
+    margin:0 auto;
+    padding: 118px;
+    max-width: 435px;
+}
+.reset{
+    padding: 12px;
+    border-radius: 24px;
+    width: 121px;
+    box-shadow: 0px 0px 12px rgb(0, 255, 247);
+    border: none;
+    background-color: black;
+    color:white;
+}
+.secondClass{
+  display: none;
+}
+.firstClass{
+  display:block;
+}
+p{
+  color:white;
+  animation :colorFade 1s infinite;
+  font-size: 24px;
+  font-family: "Dancing Script";
+  display:inline;
+
+}
+
+.scores{
+  width: 100%;
+    text-align: center;
+    display: flex;
+    flex: 20%;
+    justify-content: space-between;
+}
+.player1Score{
+  display:block;
+}
+.player2Score{
+  display:block;
+}
+@keyframes colorFade {
+            100%{
+                filter: drop-shadow( 6px 6px 6px rgb(0, 255, 247))
+            }
+
+            100%{
+                /* color: red; */
+                filter: drop-shadow( 6px 6px 6px rgb(0, 255, 247))
+            }
+        }
+
+        

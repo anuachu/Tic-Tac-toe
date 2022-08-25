@@ -1,75 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac Toe</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="script.js">
-    
-</head>
-<body>
-    
-    <header>
-    <h1>Tic Tac Toe</h1>
-    <h2 class = "firstClass">Player 1 turn
-    
-    </h2>
-    <h2 class = "secondClass">Player 2 turn</h2>
-   
-     </header>
-  
-    </div>
-   <div class = "section">
-    <div class = "section1">
-    <table class = table>
-          <tr class = "first1Box">
-           <td class = "firstBox"></td>
-          <td class = "secondBox"></td>
-          <td class = "thirdBox"></td> 
-        </tr>
-        <tr class = "second2Box">
-          <td class = "secondFirstBox"></td>
-          <td class = "secondSecondBox" ></td>
-          <td class = "secondThirdBox"></td> 
-        </tr>
-        <tr class = "third3Box">
-          <td class = "thirdFirstBox"></td>
-          <td class = "secondThirdBox"></td>
-          <td class = "thirdThirdBox"></td> 
-        </tr>
-      </table>
-      <div class = "button">
-     <button class = "reset">Reset</button>
-     <div class = "scores">
-        <div class="player1Score">
-     <p class = "player1Score">Player 1 Score</p>
-    
-     <p class = "score1">0</p>
-    </div>
-    <div class="player2Score">
-     <p class = "player2Score">Player 2 Score</p>
-     <p class = "score2">0</p>
-    </div>
-    </div>
- 
-    </div>
-    </div>
-</div>
-
-<script>
 var players =["X","O"]
-
+ 
 var playersTurn = 0;
-var tableBox = document.querySelector("score1")
+var tableBox = document.querySelector(".table")
 var count = 0;
-var balance = document.querySelector('.balance');
-    // balance = parseFloat(balance.textContent.toFixed(2));
-    console.log('an');
-
-       balance.textContent= Number(input.value) + Number(balance.textContent);
-
 
 function reset(){
    
@@ -86,44 +19,44 @@ function reset(){
 tableBox.addEventListener('click', clickHandler)
 
 
-
 function clickHandler(event){
 
      let box = event.target
      if(box.textContent !== "")return;
 
-    
+        
      event.preventDefault()
      console.log(box.tagName);
     if(box.tagName === "TD"){
-     
-      
+       
+       
         if(box.textContent === "" && playersTurn === 0){
                 box.textContent = players[0];
-        //    box.textContent.functionToShow('firstClass','text1', this); return false;    
-         functionToShow();
-           playersTurn++;
+                  
+        //   player1.player1Token = "X";
+           playerResult("player 2 turn");
+            playersTurn++;
             count++;
             return;
         } else {
              box.textContent = players[1];
-             functionToShow();
-             box.classList.toggle( '.firstClass')
+            playerResult("Player 1 turn");
             playersTurn = 0;
             count++;
            
         }
-      
+     
 
  function compareChoice(){
 
- 
+   console.log("compareChoice");
     // For 1st td horizontal win
-    for(var i = 0; i <= players.length;i++){
-      if(tableBox.children[0].children[0].children[0].textContent === players[i]&&
+    for(var i = 0; i < players.length;i++){
+   console.log("a")
+     if(tableBox.children[0].children[0].children[0].textContent === players[i]&&
     tableBox.children[0].children[0].children[1].textContent === players[i] &&   
-    tableBox.children[0].children[0].children[2].textContent === players[i] ){
-        console.log("meow");
+    tableBox.children[0].children[0].children[2].textContent === players[i]){
+        
         tableBox.children[0].children[0].children[0].style.borderColor = "rgb(0, 255, 247)";
 
         tableBox.children[0].children[0].children[1].style.borderColor = "rgb(0, 255, 247)";
@@ -137,7 +70,7 @@ function clickHandler(event){
           tableBox.removeEventListener("click", clickHandler);
         return;
     } else {
-        displayResult("Player 2 Won");
+        displayResult("player 2 Won");
         tableBox.removeEventListener("click", clickHandler);
         return;
     } 
@@ -176,7 +109,6 @@ function clickHandler(event){
         displayResult('Player 1 Won');
         tableBox.removeEventListener("click", clickHandler);
         return;
-        
     } else {
         displayResult("player 2 Won");
         tableBox.removeEventListener("click", clickHandler);
@@ -303,10 +235,8 @@ function clickHandler(event){
 }
     // //For 1st Cross
     for(var i = 0; i < players.length;i++){ 
-        console.log("1");
     if(tableBox.children[0].children[0].children[0].textContent === players[i] && tableBox.children[0].children[1].children[1].textContent === players[i] && tableBox.children[0].children[2].children[2].textContent === players[i])
-    { 
-        console.log("2");
+    {
         tableBox.children[0].children[1].children[2].style.borderColor = "rgb(0, 255, 247)"; 
         tableBox.children[0].children[2].children[1].style.borderRight = "1px solid rgba(0, 255, 247)";
 
@@ -340,10 +270,9 @@ tableBox.children[0].children[2].children[2].textContent === players[0] ){
     //For 2nd Cross
      
     for(var i = 0; i < players.length;i++){ 
-        console.log("meow");
     if(tableBox.children[0].children[0].children[2].textContent === players[i] &&  tableBox.children[0].children[1].children[1].textContent === players[i] && tableBox.children[0].children[2].children[0].textContent === players[i])
     {
- console.log("meow1");
+
         tableBox.children[0].children[1].children[0].style.borderBottom = "1px solid rgb(0, 255, 247)"; 
 
         tableBox.children[0].children[0].children[1].style.borderRight = "1px solid rgb(0, 255, 247)";
@@ -395,41 +324,10 @@ function displayResult(result) {
 
 }
 
-function functionToShow() {
+function playerResult(innerResult) {
+  playertextResult = document.createElement("h2");
+  playertextResult.innerText = innerResult;
+  document.body.appendChild(playertextResult);
 
-  var class1 =
-  document.querySelector('.firstClass')
-  var class2 =
-document.querySelector('.secondClass')
-
-  if(class1.style.display === "none" && class2.style.display === "block"){
-    class1.style.display = "block";
-    class2.style.display = "none"
-}else
-    {
-        class1.style.display = "none";
-        class2.style.display = "block";    }
-//    class2 =
-//   document.querySelector('secondClass')
-   
- 
-  }
-//   function functionToShow2() {
-
-// var class2 =
-// document.querySelector('.secondClass')
-// if(class2.style.display === "none"){
-//   class2.style.display = "block";}else
-//   {
-//       class2.style.display = "block";
-//   }
-//    class2 =
-//   document.querySelector('secondClass')
- 
-
-//}
-</script>
-    
-    
-</body>
-</html>
+//   playerResult.tagName.toggle( 'h2');
+}
