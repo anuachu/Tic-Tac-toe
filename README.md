@@ -8,7 +8,7 @@ This is my frist exciting project done in the Sofware Engineering Immersive boot
 
 :pencil: Planning and Problem Solving
    
- <ul>
+ 
  <li>Tic Tac Toe game contain 2 players</li>
  <li>Player1 will be X</li>
  <li>Player2 will be O</li>
@@ -16,10 +16,9 @@ This is my frist exciting project done in the Sofware Engineering Immersive boot
  <li>Game as 8 scenerio for winning and 1 scenerio is draw</li>
  <li>After each win of players the click is been disabled</li>
  <li>After each game click on reset button to reset the game</li>
- <ul>
  
- :rocket: Cool tech
- --------------------------------------------------------------------
+:rocket: Cool tech
+ -----------------------------------------------------------------------
  
  <ul>
  <li>
