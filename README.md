@@ -18,7 +18,7 @@ This is my frist exciting project done in the Sofware Engineering Immersive boot
  <li>After each game click on reset button to reset the game</li>
  <ul>
  
- rocket: Cool tech
+ :rocket: Cool tech
  --------------------------------------------------------------------
  
  <ul>
