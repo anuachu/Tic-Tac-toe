@@ -12,16 +12,18 @@
         .vertical{
             border-left: 1px solid black;
         } */
-        table{
-
-    width: 50%;
+table{
+    width: 30%;
     min-width: 2rem;
      border: solid black;
      margin: 0 auto;
-     margin-top: 249px ;
-
-  
+     margin-top: 34px ;
+     padding:12px;
 }
+header{
+    text-align: center;
+}
+
 th, td{
   white-space: wrap;
   overflow: hidden;
@@ -49,13 +51,11 @@ img  {
     </style>
 </head>
 <body>
+    <div class = "main">
+    <header>
     <h1>Tic Tac Toe</h1>
-    <!-- <div class = "horizontal">
-        <div class = "vertical">
-
-        </div>
-        
-    </div> -->
+     </header>
+   <div class = "section">
     <table class = table>
           <tr class = "first1Box">
            <td class = "firstBox"></td>
@@ -73,8 +73,9 @@ img  {
           <td class = "thirdThirdBox"></td> 
         </tr>
       </table>
-    
-      <button class = "reset">Reset</button>
+     <button class = "reset">Reset</button>
+    </div>
+</div>
     
     <script>
 
@@ -82,23 +83,23 @@ var players =["X","O"]
  
 var playersTurn = 0;
 var tableBox = document.querySelector(".table")
+var count = 0;
 
-
-function buttonDisabled() {
-    for(var i = 0; i <tableBox.length;i++){
-    tableBox[i].removeEventListener('click', function(){})
-    console.log("anu");
-    }
+function reset(){
+    var td = document.querySelector(".first1Box")
+    var reset = document.querySelector(".reset");
+    reset.addEventListener('click', function(){
+        
+        window.location.reload()
+    })
 }
 
- 
+ reset();
 
-tableBox.addEventListener('click', function(event){
+tableBox.addEventListener('click', clickHandler)
+function clickHandler(event){
 
-
-
-
-    let box = event.target
+     let box = event.target
     
     event.preventDefault()
      console.log(box.tagName);
@@ -116,10 +117,12 @@ tableBox.addEventListener('click', function(event){
         //   player1.player1Token = "X";
             console.log("player 1 turn");
             playersTurn++;
+            count++;
         } else {
              box.textContent = players[1];
             console.log("Player 2 turn");
             playersTurn = 0;
+            count++;
            
         }
      
@@ -144,18 +147,18 @@ tableBox.addEventListener('click', function(event){
     tableBox.children[0].children[0].children[1].textContent === players[0]&&   
     tableBox.children[0].children[0].children[2].textContent === players[0] ){
         displayResult("Player 1 Won");
-         return;
+          tableBox.removeEventListener("click", clickHandler);
+        return;
     } else {
         displayResult("player 2 Won");
+        tableBox.removeEventListener("click", clickHandler);
         return;
-        } 
+    } 
     } 
    
   }  
  
-    
-
-   // For 2nd td horizontal tag
+    // For 2nd td horizontal tag
    for(var i = 0; i < players.length;i++){
     if(tableBox.children[0].children[1].children[0].textContent=== players[i] &&
     tableBox.children[0].children[1].children[1].textContent === players[i] &&  
@@ -171,9 +174,11 @@ tableBox.addEventListener('click', function(event){
     tableBox.children[0].children[1].children[1].textContent === players[0]&&   
     tableBox.children[0].children[1].children[2].textContent === players[0] ){
         displayResult('Player 1 Won');
+        tableBox.removeEventListener("click", clickHandler);
         return;
     } else {
         displayResult("player 2 Won");
+        tableBox.removeEventListener("click", clickHandler);
         return;
     }
     }}
@@ -194,9 +199,10 @@ tableBox.addEventListener('click', function(event){
     tableBox.children[0].children[2].children[1].textContent === players[0]&&   
     tableBox.children[0].children[2].children[2].textContent === players[0] ){
         displayResult('Player 1 Won');
-        
+        tableBox.removeEventListener("click", clickHandler);
     } else {
         displayResult("player 2 Won");
+        tableBox.removeEventListener("click", clickHandler);
         return;
     }
     }}
@@ -216,9 +222,11 @@ tableBox.addEventListener('click', function(event){
     tableBox.children[0].children[1].children[0].textContent === players[0]&&   
     tableBox.children[0].children[2].children[0].textContent === players[0] ){
         displayResult('Player 1 Won');
+        tableBox.removeEventListener("click", clickHandler);
          return;
     } else {
         displayResult("player 2 Won");
+        tableBox.removeEventListener("click", clickHandler);
     }}
     }
 
@@ -236,9 +244,12 @@ tableBox.addEventListener('click', function(event){
     tableBox.children[0].children[1].children[1].textContent === players[0]&&   
     tableBox.children[0].children[2].children[1].textContent === players[0] ){
         displayResult('Player 1 Won');
+        tableBox.removeEventListener("click", clickHandler);
          return;
+         
     } else {
         displayResult("player 2 Won");
+        tableBox.removeEventListener("click", clickHandler);
     }
     }}
 
@@ -256,8 +267,10 @@ tableBox.addEventListener('click', function(event){
     tableBox.children[0].children[1].children[2].textContent === players[0]&&   
     tableBox.children[0].children[2].children[2].textContent === players[0] ){
         displayResult('Player 1 Won');
+        tableBox.removeEventListener("click", clickHandler);
     } else {
         displayResult("player 2 Won");
+        tableBox.removeEventListener("click", clickHandler);
         return;
     } 
     }
@@ -275,13 +288,16 @@ if(tableBox.children[0].children[0].children[0].textContent === players[0]&&
 tableBox.children[0].children[1].children[1].textContent === players[0]&&   
 tableBox.children[0].children[2].children[2].textContent === players[0] ){
         displayResult('Player 1 Won');
-     
+        tableBox.removeEventListener("click", clickHandler);
+     return;
     } else {
        displayResult("player 2 Won");
+       tableBox.removeEventListener("click", clickHandler);
+       return;
     }
     }}
 
-    // //For 2nd Cross
+    //For 2nd Cross
      
     for(var i = 0; i < players.length;i++){ 
     if(tableBox.children[0].children[0].children[2].textContent === players[i] &&  tableBox.children[0].children[1].children[1].textContent === players[i] && tableBox.children[0].children[2].children[0].textContent === players[i])
@@ -295,24 +311,38 @@ tableBox.children[0].children[2].children[2].textContent === players[0] ){
     tableBox.children[0].children[1].children[1].textContent === players[0]&&   
     tableBox.children[0].children[2].children[0].textContent === players[0] ){
         displayResult('Player 1 Won');
-        
+        tableBox.removeEventListener("click", clickHandler);
+        return;
     } else {
         displayResult("player 2 Won");
+        tableBox.removeEventListener("click", clickHandler);
+        return;
     }
     }
 }
 
     //For draw
+     if(count === 9){
+        displayResult("It is a Tie");
+     }
+
+    
+
+
+    
 }  
 compareChoice();
+
+
 console.log("a");
-}})
+}}
 
 
 function displayResult(result) {
   textResult = document.createElement("h2");
   textResult.innerText = result;
   document.body.appendChild(textResult);
+
 }
 
 
