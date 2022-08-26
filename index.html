@@ -93,34 +93,27 @@ function clickHandler(event){
      event.preventDefault()
      console.log(box.tagName);
     if(box.tagName === "TD"){
-     
-      
-        if(box.textContent === "" && playersTurn === 0){
-                box.textContent = players[0];
-        //    box.textContent.functionToShow('firstClass','text1', this); return false;    
-         functionToShow();
-           playersTurn++;
-            count++;
-            return;
-        } else {
-             box.textContent = players[1];
-             functionToShow();
-             box.classList.toggle( '.firstClass')
-            playersTurn = 0;
-            count++;
-           
-        }
-      
+         if(box.textContent === "" && playersTurn % 2 === 0 ){
+                    box.textContent = players[0];
+                    playersTurn++;
+                    functionToShow();
+                    count++;
+                }else {
+                    box.textContent = players[1];
+                    playersTurn++;
+                    functionToShow();
+                    count++;
+                }
 
  function compareChoice(){
 
  
     // For 1st td horizontal win
     for(var i = 0; i <= players.length;i++){
-      if(tableBox.children[0].children[0].children[0].textContent === players[i]&&
-    tableBox.children[0].children[0].children[1].textContent === players[i] &&   
-    tableBox.children[0].children[0].children[2].textContent === players[i] ){
-        console.log("meow");
+      if(tableBox.children[0].children[0].children[0].textContent == players[i]&&
+    tableBox.children[0].children[0].children[1].textContent == players[i] &&   
+    tableBox.children[0].children[0].children[2].textContent == players[i] ){
+       
         tableBox.children[0].children[0].children[0].style.borderColor = "rgb(0, 255, 247)";
 
         tableBox.children[0].children[0].children[1].style.borderColor = "rgb(0, 255, 247)";
@@ -149,10 +142,10 @@ function clickHandler(event){
     } 
     } 
    
-  }  
+  
  
     // For 2nd td horizontal tag
-   for(var i = 0; i < players.length;i++){
+   
     if(tableBox.children[0].children[1].children[0].textContent=== players[i] &&
     tableBox.children[0].children[1].children[1].textContent === players[i] &&  
     tableBox.children[0].children[1].children[2].textContent === players[i] ){
@@ -194,10 +187,10 @@ function clickHandler(event){
         tableBox.removeEventListener("click", clickHandler);
         return;
     }
-    }}
+    }
      
     //For 3rd td horizontal tag
-    for(var i = 0; i < players.length;i++){
+   
     if(tableBox.children[0].children[2].children[0].textContent === players[i] &&
     tableBox.children[0].children[2].children[1].textContent === players[i] &&  
     tableBox.children[0].children[2].children[2].textContent === players[i] ){
@@ -227,10 +220,10 @@ function clickHandler(event){
         tableBox.removeEventListener("click", clickHandler);
         return;
     }
-    }}
+    }
 
     //For 1st td tag vertical
-    for(var i = 0; i < players.length;i++){
+
     if(tableBox.children[0].children[0].children[0].textContent ===  players[i] &&
     tableBox.children[0].children[1].children[0].textContent === players[i] && tableBox.children[0].children[2].children[0].textContent === players[i] 
      ){
@@ -258,11 +251,11 @@ function clickHandler(event){
   
   first.textContent = Number(first.textContent)+ 1;
         tableBox.removeEventListener("click", clickHandler);
-    }}
+    }
     }
 
     // //For 2nd td tag vertical
-    for(var i = 0; i < players.length;i++){
+   
     if( tableBox.children[0].children[0].children[1].textContent === players[i] &&
     tableBox.children[0].children[1].children[1].textContent === players[i]  && tableBox.children[0].children[2].children[1].textContent === players[i]
      ){
@@ -296,11 +289,11 @@ function clickHandler(event){
   
         first.textContent = Number(first.textContent)+ 1;
         tableBox.removeEventListener("click", clickHandler);
-    }
+    
     }}
 
     //For 3rd td tag vertical
-    for(var i = 0; i < players.length;i++){  
+   
     if( tableBox.children[0].children[0].children[2].textContent === players[i]  &&
     tableBox.children[0].children[1].children[2].textContent === players[i]  && tableBox.children[0].children[2].children[2].textContent === players[i])
     {
@@ -336,10 +329,10 @@ function clickHandler(event){
         return;
     } 
     }
-}
+
     // //For 1st Cross
-    for(var i = 0; i < players.length;i++){ 
-        console.log("1");
+    
+       
     if(tableBox.children[0].children[0].children[0].textContent === players[i] && tableBox.children[0].children[1].children[1].textContent === players[i] && tableBox.children[0].children[2].children[2].textContent === players[i])
     { 
         console.log("2");
@@ -377,12 +370,12 @@ tableBox.children[0].children[2].children[2].textContent === players[0] ){
        tableBox.removeEventListener("click", clickHandler);
        return;
     }
-    }}
+    }
 
     //For 2nd Cross
      
-    for(var i = 0; i < players.length;i++){ 
-        console.log("meow");
+    
+        
     if(tableBox.children[0].children[0].children[2].textContent === players[i] &&  tableBox.children[0].children[1].children[1].textContent === players[i] && tableBox.children[0].children[2].children[0].textContent === players[i])
     {
  console.log("meow1");
@@ -421,7 +414,7 @@ tableBox.children[0].children[2].children[2].textContent === players[0] ){
     }
     }
 }
-
+ }
     //For draw
    
      if(count === 9){
@@ -433,11 +426,12 @@ compareChoice();
 
 
 console.log("a");
-}}
+}
 
 
 function displayResult(result) {
   textResult = document.createElement("h2");
+
   textResult.innerText = result;
   document.body.appendChild(textResult);
 
