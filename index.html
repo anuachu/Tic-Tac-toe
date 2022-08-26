@@ -41,7 +41,7 @@
         </tr>
       </table>
       <div class = "button">
-     <button class = "reset">Reset</button>
+     <button class = "reset">Restart</button>
         <div class = "scores">
         <div class="player1Score">
      <p class = "player1Score">Player 1 Score</p>
@@ -130,12 +130,21 @@ function clickHandler(event){
     if(tableBox.children[0].children[0].children[0].textContent === players[0]&&
     tableBox.children[0].children[0].children[1].textContent === players[0]&&   
     tableBox.children[0].children[0].children[2].textContent === players[0] ){
+        
         displayResult("Player 1 Won");
+        var first = document.querySelector(".score1");
+  
+        first.textContent = Number(first.textContent)+ 1;
+    
+     
           tableBox.removeEventListener("click", clickHandler);
-        return;
+      return;
     } else {
         displayResult("Player 2 Won");
         tableBox.removeEventListener("click", clickHandler);
+        var first = document.querySelector(".score2");
+  
+  first.textContent = Number(first.textContent)+ 1;
         return;
     } 
     } 
@@ -171,11 +180,17 @@ function clickHandler(event){
     tableBox.children[0].children[1].children[1].textContent === players[0]&&   
     tableBox.children[0].children[1].children[2].textContent === players[0] ){
         displayResult('Player 1 Won');
+        var first = document.querySelector(".score1");
+  
+  first.textContent = Number(first.textContent)+ 1;
         tableBox.removeEventListener("click", clickHandler);
         return;
         
     } else {
         displayResult("player 2 Won");
+        var first = document.querySelector(".score2");
+  
+  first.textContent = Number(first.textContent)+ 1;
         tableBox.removeEventListener("click", clickHandler);
         return;
     }
@@ -200,9 +215,15 @@ function clickHandler(event){
     tableBox.children[0].children[2].children[1].textContent === players[0]&&   
     tableBox.children[0].children[2].children[2].textContent === players[0] ){
         displayResult('Player 1 Won');
+        var first = document.querySelector(".score1");
+  
+  first.textContent = Number(first.textContent)+ 1;
         tableBox.removeEventListener("click", clickHandler);
     } else {
         displayResult("player 2 Won");
+        var first = document.querySelector(".score2");
+  
+  first.textContent = Number(first.textContent)+ 1;
         tableBox.removeEventListener("click", clickHandler);
         return;
     }
@@ -226,10 +247,16 @@ function clickHandler(event){
     tableBox.children[0].children[1].children[0].textContent === players[0]&&   
     tableBox.children[0].children[2].children[0].textContent === players[0] ){
         displayResult('Player 1 Won');
+        var first = document.querySelector(".score1");
+  
+  first.textContent = Number(first.textContent)+ 1;
         tableBox.removeEventListener("click", clickHandler);
          return;
     } else {
         displayResult("player 2 Won");
+        var first = document.querySelector(".score2");
+  
+  first.textContent = Number(first.textContent)+ 1;
         tableBox.removeEventListener("click", clickHandler);
     }}
     }
@@ -257,11 +284,17 @@ function clickHandler(event){
     tableBox.children[0].children[1].children[1].textContent === players[0]&&   
     tableBox.children[0].children[2].children[1].textContent === players[0] ){
         displayResult('Player 1 Won');
+        var first = document.querySelector(".score1");
+  
+         first.textContent = Number(first.textContent)+ 1;
         tableBox.removeEventListener("click", clickHandler);
          return;
          
     } else {
-        displayResult("player 2 Won");
+        displayResult("Player 2 Won");
+        var first = document.querySelector(".score2");
+  
+        first.textContent = Number(first.textContent)+ 1;
         tableBox.removeEventListener("click", clickHandler);
     }
     }}
@@ -290,9 +323,15 @@ function clickHandler(event){
     tableBox.children[0].children[1].children[2].textContent === players[0]&&   
     tableBox.children[0].children[2].children[2].textContent === players[0] ){
         displayResult('Player 1 Won');
+        var first = document.querySelector(".score1");
+  
+        first.textContent = Number(first.textContent)+ 1;
         tableBox.removeEventListener("click", clickHandler);
     } else {
-        displayResult("player 2 Won");
+        displayResult("Player 2 Won");
+        var first = document.querySelector(".score2");
+  
+        first.textContent = Number(first.textContent)+ 1;
         tableBox.removeEventListener("click", clickHandler);
         return;
     } 
@@ -325,10 +364,16 @@ if(tableBox.children[0].children[0].children[0].textContent === players[0]&&
 tableBox.children[0].children[1].children[1].textContent === players[0]&&   
 tableBox.children[0].children[2].children[2].textContent === players[0] ){
         displayResult('Player 1 Won');
+        var first = document.querySelector(".score1");
+  
+  first.textContent = Number(first.textContent)+ 1;
         tableBox.removeEventListener("click", clickHandler);
      return;
     } else {
-       displayResult("player 2 Won");
+       displayResult("Player 2 Won");
+       var first = document.querySelector(".score2");
+  
+  first.textContent = Number(first.textContent)+ 1;
        tableBox.removeEventListener("click", clickHandler);
        return;
     }
@@ -361,10 +406,16 @@ tableBox.children[0].children[2].children[2].textContent === players[0] ){
     tableBox.children[0].children[1].children[1].textContent === players[0]&&   
     tableBox.children[0].children[2].children[0].textContent === players[0] ){
         displayResult('Player 1 Won');
+        var first = document.querySelector(".score1");
+  
+  first.textContent = Number(first.textContent)+ 1;
         tableBox.removeEventListener("click", clickHandler);
         return;
     } else {
-        displayResult("player 2 Won");
+        displayResult("Player 2 Won");
+        var first = document.querySelector(".score2");
+  
+  first.textContent = Number(first.textContent)+ 1;
         tableBox.removeEventListener("click", clickHandler);
         return;
     }
@@ -406,12 +457,11 @@ document.querySelector('.secondClass')
     {
         class1.style.display = "none";
         class2.style.display = "block";    }
-//    class2 =
-//   document.querySelector('secondClass')
+
    
  
   }
-//   function functionToShow2() {
+
 
 // var class2 =
 // document.querySelector('.secondClass')
