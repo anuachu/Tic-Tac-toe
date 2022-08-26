@@ -122,4 +122,15 @@ p{
             }
         }
 
-        
+@media(max-width: 700px){
+  table {
+    max-width: -10rem;
+    min-width: 14rem;
+    margin: 0 auto;
+    margin-top: 34px;
+    height: 100%;
+  }
+  body{
+    padding:16px;
+  }
+}      
