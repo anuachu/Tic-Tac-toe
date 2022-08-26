@@ -60,6 +60,7 @@ body {
 	margin: 0 auto !important; 
 	float: none !important; 
     background-image:url("https://rare-gallery.com/resol/1920x1080/4584070-black-gray-leather-texture-dark-simple.jpg");
+    background-color: black;
     background-repeat: no-repeat;
     background-size:100% 200% ;
 }
